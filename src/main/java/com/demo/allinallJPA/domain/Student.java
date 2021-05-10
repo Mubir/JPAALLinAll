@@ -1,9 +1,7 @@
 package com.demo.allinallJPA.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 @Entity
 public class Student {
     @Id
@@ -13,13 +11,15 @@ public class Student {
     @Column(nullable = false)
     public String name;
 
+    @OneToOne
+    public Passport passport;
+
     public Student()
     {
 
     }
 
-    public Student(Long id, String name) {
-        this.id = id;
+    public Student(String name) {
         this.name = name;
     }
 
@@ -37,6 +37,14 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
     }
 
     @Override

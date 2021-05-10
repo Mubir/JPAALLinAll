@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 
 @Repository
-public class SimpleRepo {
+public class CourseRepo {
     @Autowired
     EntityManager em;
 
