@@ -11,7 +11,7 @@ public class Student {
     @Column(nullable = false)
     public String name;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     public Passport passport;
 
     public Student()

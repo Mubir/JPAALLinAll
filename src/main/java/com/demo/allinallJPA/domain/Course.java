@@ -1,14 +1,13 @@
 package com.demo.allinallJPA.domain;
 
-import com.sun.istack.NotNull;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Course {
@@ -25,6 +24,8 @@ public class Course {
     @UpdateTimestamp
     public LocalDateTime lastUpdatedTime;
 
+    @OneToMany(mappedBy = "course")
+    public List<Review> review = new ArrayList<>();
     public Course() {
     }
 
@@ -65,6 +66,19 @@ public class Course {
 
     public void setLastUpdatedTime(LocalDateTime lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    public void addReview(Review review)
+    {
+        this.review.add(review);
+    }
+    public void removeReview(Review review)
+    {
+        this.review.remove(review);
+    }
+
+    public List<Review> getReview() {
+        return review;
     }
 
     @Override
