@@ -16,8 +16,8 @@ insert into student(id,name,passport_id) values (2004,'shalby',0092);
 SELECT * FROM STUDENT ,PASSPORT WHERE STUDENT.PASSPORT_ID=PASSPORT.ID
 
 */
-insert into review(id,rating,discription,course_id) values (06,'1',' hello rick ','121');
-insert into review(id,rating,discription,course_id) values (05,'3',' hello morty ','123');
-insert into review(id,rating,discription,course_id) values (02,'4',' hello lily ','121');
-insert into review(id,rating,discription,course_id) values (09,'5',' hello shalby ','123');
+insert into review(id,rating,discription,course_id) values (06,'1',' hello rick ',121);
+insert into review(id,rating,discription,course_id) values (05,'3',' hello morty ',123);
+insert into review(id,rating,discription,course_id) values (02,'4',' hello lily ',121);
+insert into review(id,rating,discription,course_id) values (09,'5',' hello shalby ',123);
 
