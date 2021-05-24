@@ -27,7 +27,7 @@ public class Course {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "course")
     public List<Review> reviews = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "courses")
     public List<Student> students = new ArrayList<>();
 
     public Course() {
