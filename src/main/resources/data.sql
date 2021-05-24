@@ -21,3 +21,9 @@ insert into review(id,rating,discription,course_id) values (05,'3',' hello morty
 insert into review(id,rating,discription,course_id) values (02,'4',' hello lily ',121);
 insert into review(id,rating,discription,course_id) values (09,'5',' hello shalby ',123);
 
+
+insert into STUDENT_COURSE(STUDENT_ID,COURSE_ID) values(2001,121);
+insert into STUDENT_COURSE(STUDENT_ID,COURSE_ID) values(2001,123);
+insert into STUDENT_COURSE(STUDENT_ID,COURSE_ID) values(2002,122);
+insert into STUDENT_COURSE(STUDENT_ID,COURSE_ID) values(2003,124);
+

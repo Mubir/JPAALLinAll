@@ -17,6 +17,10 @@ public class Student {
     public Passport passport;
 
     @ManyToMany
+    @JoinTable(name = "STUDENT_COURSE",
+            joinColumns =@JoinColumn(name = "STUDENT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "COURSE_ID")
+    )
     public List<Course> courses = new ArrayList<>();
 
     public Student()
