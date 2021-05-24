@@ -10,6 +10,7 @@ public class Passport {
 
     @Column(nullable = false)
     public String number;
+
     @OneToOne(fetch = FetchType.LAZY,mappedBy = "passport")
     public Student student;
 

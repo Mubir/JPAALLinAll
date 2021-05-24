@@ -1,12 +1,10 @@
 package com.demo.allinallJPA.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Review {
+
     @Id
     @GeneratedValue
     public Long id;
@@ -16,8 +14,9 @@ public class Review {
 
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     public Course course;
+
     public Review()
     {
 
@@ -60,4 +59,7 @@ public class Review {
                 ", discription='" + discription + '\'' +
                 '}';
     }
+
+
+
 }

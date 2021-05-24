@@ -25,10 +25,15 @@ public class AllinallJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		/*
 		Course course = courseRepo.findById(124L);
 		String name = course.getName();
 		logger.error(" -------- >>>>>>>>>",name);
 		System.out.println(course.toString());
 		studentRepo.savePass();
+
+		 */
+
+		courseRepo.addReviewsForCourse();
 	}
 }

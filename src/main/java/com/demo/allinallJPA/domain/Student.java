@@ -1,6 +1,8 @@
 package com.demo.allinallJPA.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -13,6 +15,9 @@ public class Student {
 
     @OneToOne(fetch = FetchType.LAZY)
     public Passport passport;
+
+    @ManyToMany
+    public List<Course> courses = new ArrayList<>();
 
     public Student()
     {
@@ -45,6 +50,14 @@ public class Student {
 
     public void setPassport(Passport passport) {
         this.passport = passport;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void addCourses(Course courses) {
+        this.courses.add(courses);
     }
 
     @Override

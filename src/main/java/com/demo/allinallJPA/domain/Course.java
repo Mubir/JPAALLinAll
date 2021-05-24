@@ -24,8 +24,12 @@ public class Course {
     @UpdateTimestamp
     public LocalDateTime lastUpdatedTime;
 
-    @OneToMany(mappedBy = "course")
-    public List<Review> review = new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "course")
+    public List<Review> reviews = new ArrayList<>();
+
+    @ManyToMany
+    public List<Student> students = new ArrayList<>();
+
     public Course() {
     }
 
@@ -34,6 +38,7 @@ public class Course {
         this.name = name;
         this.createdTime = createdTime;
         this.lastUpdatedTime = lastUpdatedTime;
+
     }
 
     public Long getId() {
@@ -70,15 +75,23 @@ public class Course {
 
     public void addReview(Review review)
     {
-        this.review.add(review);
+        this.reviews.add(review);
     }
     public void removeReview(Review review)
     {
-        this.review.remove(review);
+        this.reviews.remove(review);
     }
 
-    public List<Review> getReview() {
-        return review;
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void addStudents(Student students) {
+        this.students.add(students);
     }
 
     @Override
@@ -88,6 +101,9 @@ public class Course {
                 ", name='" + name + '\'' +
                 ", createdTime=" + createdTime +
                 ", lastUpdatedTime=" + lastUpdatedTime +
+                ", review: "+reviews +
                 '}';
     }
+
+
 }
